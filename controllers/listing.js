@@ -31,6 +31,11 @@ module.exports.showListing = async (req, res) => {
 
 
 module.exports.createListing = async (req, res, next) => {
+    if (!req.file) {
+        req.flash("error", "No file uploaded");
+        return res.redirect("/listings");
+    }
+
     let url = req.file.path;
     let filename = req.file.filename;
     
