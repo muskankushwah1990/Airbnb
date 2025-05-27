@@ -4,7 +4,7 @@ const Listing = require("../models/listing.js");
 
 
 
-const MONGO_URL ="mongodb+srv://muskankushwah:aSZG8iMom8tLwbkS@cluster0.l5jgmnu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const MONGO_URL ="mongodb+srv://muskankushwah891:muskan987@cluster0.tdtfo.mongodb.net/Airbnb?retryWrites=true&w=majority&appName=Cluster0";
 
 main()
 .then(() => {

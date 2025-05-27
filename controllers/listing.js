@@ -20,12 +20,12 @@ module.exports.showListing = async (req, res) => {
        },
     })
     .populate("owner");
-    console.log("Line 24", listing)
+    // console.log("Line 24", listing)
     if(!listing) {
        req.flash("error", "listing you requested for does not exist!");
        res.redirect("/listing");
     }
-    console.log(listing);
+    // console.log(listing);
     res.render("listings/show.ejs", {listing});
 };
 
@@ -82,7 +82,7 @@ module.exports.updateListing = async (req, res) => {
 module.exports.destroyListing = async(req, res) => {
     let {id} = req.params;
     let deleteListing =await Listing.findByIdAndDelete(id);
-    console.log(deleteListing);
+    // console.log(deleteListing);
     req.flash("success", " Listing Deleted");
     res.redirect("/listings");
 };
