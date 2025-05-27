@@ -22,6 +22,10 @@ const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const Listing = require("./models/listing.js");
+const helmet = require('helmet');
+
+
+
 
 
 //database connect
@@ -40,12 +44,14 @@ async function main() {
     await mongoose.connect(dbUrl);
 }
 
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
+app.use(helmet());
 
 
 const store = MongoStore.create({
